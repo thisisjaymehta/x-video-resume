@@ -1,3 +1,28 @@
+let wideStyleEl = null;
+
+function applyWideMode() {
+  chrome.storage.local.get(["wideMode", "wideWidth"], (result) => {
+    if (result.wideMode) {
+      const width = result.wideWidth || 900;
+      if (!wideStyleEl) {
+        wideStyleEl = document.createElement("style");
+        wideStyleEl.id = "x-video-resume-wide";
+      }
+      wideStyleEl.textContent = `html .r-1ye8kvj { max-width: ${width}px !important; }`;
+      document.documentElement.appendChild(wideStyleEl);
+    } else if (wideStyleEl) {
+      wideStyleEl.remove();
+      wideStyleEl = null;
+    }
+  });
+}
+
+applyWideMode();
+
+chrome.storage.onChanged.addListener((changes) => {
+  if (changes.wideMode || changes.wideWidth) applyWideMode();
+});
+
 function getVideoKey(video) {
   if (!video.poster) return null;
   const match = video.poster.match(
