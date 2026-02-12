@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "X Video Resume",
+  "version": "1.0",
+  "description": "Saves and resumes X (Twitter) video playback position locally.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
