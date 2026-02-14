@@ -4,13 +4,19 @@
   "version": "1.1",
   "description": "Saves and resumes X (Twitter) video playback position locally.",
   "permissions": ["storage"],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_title": "X Video Resume Settings"
   },
   "content_scripts": [
     {
-      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "matches": ["https://x.com/*"],
       "js": ["content.js"],
       "run_at": "document_end"
     }
