@@ -91,33 +91,6 @@
         transform: translateX(18px);
       }
 
-      .width-input-row {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 0 4px;
-      }
-
-      .width-input-row input[type="number"] {
-        width: 80px;
-        padding: 6px 8px;
-        background: #273340;
-        border: 1px solid #3e4144;
-        border-radius: 6px;
-        color: #e7e9ea;
-        font-size: 13px;
-        outline: none;
-      }
-
-      .width-input-row input[type="number"]:focus {
-        border-color: #1d9bf0;
-      }
-
-      .width-input-row span {
-        font-size: 13px;
-        color: #71767b;
-      }
-
       .status {
         font-size: 12px;
         color: #1d9bf0;
@@ -133,28 +106,12 @@
     <div class="setting-row">
       <div>
         <div class="setting-label">Wide Mode</div>
-        <div class="setting-desc">Expand timeline width</div>
+        <div class="setting-desc">Expand timeline to fill the window</div>
       </div>
       <label class="toggle">
         <input type="checkbox" id="wideToggle" />
         <span class="slider"></span>
       </label>
-    </div>
-
-    <div class="setting-row" id="widthRow" style="display: none">
-      <div style="width: 100%">
-        <div class="setting-label">Wide Mode Width</div>
-        <div class="width-input-row">
-          <input
-            type="number"
-            id="widthInput"
-            min="600"
-            max="1400"
-            value="900"
-          />
-          <span>px</span>
-        </div>
-      </div>
     </div>
 
     <div class="status" id="status"></div>
