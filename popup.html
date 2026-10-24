@@ -91,6 +91,24 @@
         transform: translateX(18px);
       }
 
+      .select {
+        flex-shrink: 0;
+        margin-left: 12px;
+        padding: 4px 8px;
+        font: inherit;
+        font-size: 13px;
+        color: #e7e9ea;
+        background: #273340;
+        border: 1px solid #3e4144;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .select:focus-visible {
+        outline: 2px solid #1d9bf0;
+        outline-offset: 1px;
+      }
+
       .status {
         font-size: 12px;
         color: #1d9bf0;
@@ -112,6 +130,19 @@
         <input type="checkbox" id="wideToggle" />
         <span class="slider"></span>
       </label>
+    </div>
+
+    <div class="setting-row">
+      <div>
+        <div class="setting-label">Rewind on Resume</div>
+        <div class="setting-desc">Back up a little to catch the context</div>
+      </div>
+      <select class="select" id="rewindSelect">
+        <option value="0">Off</option>
+        <option value="3">3 sec</option>
+        <option value="5">5 sec</option>
+        <option value="10">10 sec</option>
+      </select>
     </div>
 
     <div class="status" id="status"></div>
