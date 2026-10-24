@@ -1,6 +1,13 @@
 const wideToggle = document.getElementById("wideToggle");
 const rewindSelect = document.getElementById("rewindSelect");
 const status = document.getElementById("status");
+const contactLink = document.getElementById("contactLink");
+
+// Put the version in the subject so reports say which build they're about
+const { version } = chrome.runtime.getManifest();
+contactLink.href = `mailto:jay@neuralquark.com?subject=${encodeURIComponent(
+  `X Video Resume v${version} feedback`,
+)}`;
 
 const DEFAULT_REWIND = 3;
 
